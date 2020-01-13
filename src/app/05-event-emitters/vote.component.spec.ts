@@ -17,4 +17,11 @@ describe('VoteComponent', () => {
     expect(component.totalVotes).toBe(-1);
   });
 
+  it('should rasie voteChanged eventhen upvoted', () => {
+    let totalVotes = null;
+    component.voteChanged.subscribe(tv => totalVotes = tv);
+    component.upVote();
+    expect(totalVotes).toBe(1);
+  });
+
 });

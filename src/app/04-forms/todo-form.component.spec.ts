@@ -15,6 +15,9 @@ describe('TodoFormComponent', () => {
     expect(component.form.contains('email')).toBeTruthy();
   });
 
-  it('', () => {
+  it('should make the name control required', () => {
+    const control = component.form.get('name');
+    control.setValue('');
+    expect(control.valid).toBeFalsy();
   });
 });
